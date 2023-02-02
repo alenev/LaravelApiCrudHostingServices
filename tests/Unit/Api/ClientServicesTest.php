@@ -9,7 +9,7 @@ use Laravel\Passport\Passport;
 use App\Models\Products;
 use App\Models\ClientsServices;
 
-class LoginControllerTest extends TestCase
+class ClientServicesTest extends TestCase
 {
 
     public function testApiLoginController()
