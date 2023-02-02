@@ -5,7 +5,7 @@ namespace App\Repositories;
 use App\Models\ClientsServices;
 use App\Repositories\Interfaces\ClientsServicesRepositoryInterface;
 
-class ClientsServicesRepository implements ClientsServicesRepositoryInterface
+class ClientsServicesRepositoryEloquent implements ClientsServicesRepositoryInterface
 {
 
     public function all($user_id)

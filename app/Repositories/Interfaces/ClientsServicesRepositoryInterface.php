@@ -10,4 +10,4 @@ interface ClientsServicesRepositoryInterface {
     public function find($id);
     public function clientServiceExistbyProductId(array $data);
     public function clientServiceShowById(array $data);
-}
+} 

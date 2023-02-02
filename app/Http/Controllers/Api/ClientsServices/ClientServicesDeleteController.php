@@ -4,20 +4,21 @@ namespace App\Http\Controllers\Api\ClientsServices;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Repositories\Interfaces\ClientsServicesRepositoryInterface;
+use App\Repositories\ClientsServicesRepositoryEloquent;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
 
 class ClientServicesDeleteController extends Controller
 {
     
-    private ClientsServicesRepositoryInterface $clientsServicesRepository;
+    private $clientsServicesRepository;
     private $user;
     private $clientService;
 
-    public function __construct(ClientsServicesRepositoryInterface $clientsServicesRepository){
+    public function __construct(){
+
+        $this->clientsServicesRepository = new ClientsServicesRepositoryEloquent();
         
-        $this->clientsServicesRepository = $clientsServicesRepository;
     }
 
     public function delete($id)

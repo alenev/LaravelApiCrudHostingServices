@@ -4,24 +4,25 @@ namespace App\Http\Controllers\Api\ClientsServices;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Repositories\Interfaces\ClientsServicesRepositoryInterface;
+use App\Repositories\ClientsServicesRepositoryEloquent;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
 
 class ClientServicesEditController extends Controller
 {
     
-    private ClientsServicesRepositoryInterface $clientsServicesRepository;
+    private $clientsServicesRepository;
     private $user;
     private $clientService;
 
-    public function __construct(ClientsServicesRepositoryInterface $clientsServicesRepository){
+    public function __construct(){
+
+        $this->clientsServicesRepository = new ClientsServicesRepositoryEloquent();
         
-        $this->clientsServicesRepository = $clientsServicesRepository;
     }
 
 
- public function edit($id):JsonResponse
+    public function edit($id):JsonResponse
     {
         $this->user = Auth::user();
 
