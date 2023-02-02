@@ -48,13 +48,6 @@ class LoginControllerTest extends TestCase
                 }
     }
 
-    // public function testGetProducts(){
-
-    //     $products = PRODUCTS::all();
-
-    //     print "\xA\xA products: ".json_encode($products);
-    // }
-
     
 
     public function testApiClientServicesAddNewController(){
